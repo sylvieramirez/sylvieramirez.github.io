@@ -1,0 +1,64 @@
+---
+layout: default
+---
+
+{{ content }}
+
+
+<!-- Html Elements for Search -->
+<div id="search-container">
+    <input type="text" id="search-input" placeholder="search...">
+    <ul id="results-container"></ul>
+    </div>
+    
+    <!-- Script pointing to search-script.js -->
+    <script src="/js/search.js" type="text/javascript"></script>
+    
+    <!-- Configuration -->
+    <script>
+    SimpleJekyllSearch({
+      searchInput: document.getElementById('search-input'),
+      resultsContainer: document.getElementById('results-container'),
+      noResultsText: ("No result found!"),
+      json: '/search.json'
+    })
+    </script>
+
+<!-- <h2>Most recent recipe</h2>
+{{ content }}
+<ul class="myrecipes">
+    {% for recipe in site.baked-goods limit:1 %}
+    <div class="recipe-post">
+        <a class="recipe__title" href="{{ recipe.url }}">{{ recipe.title }}</a>
+        <p class="recipe__desc">
+            {{ recipe.short_description }}
+        </p>
+        <a class="recipe__link" href="{{ recipe.url }}">Read More</a>
+    </div>
+    {% endfor %}
+</ul>
+
+<section class="older-recipes">
+    <h2>Recipes</h2>
+        {% for recipe in site.baked-goods limit: 4 %}
+        <div class="recipe-post">
+            <a class="recipe__title" href="{{ recipe.url }}">{{ recipe.title }}</a>
+            <p class="recipe__desc">
+                {{ recipe.short_description }}
+            </p>
+            <a class="recipe__link" href="{{ recipe.url }}">Read More</a>
+        </div>
+        {% endfor %}
+</section> -->
+
+
+
+<!-- <h2>Recipes</h2>
+
+{% for collection in site.collections %}
+  <ul>
+    {% if collection.collection_type == "recipe-category" %}
+        <li><a href="{{ collection.label }}">{{ collection.label }}</a></li>
+    {% endif %}
+</ul>
+{% endfor %} -->

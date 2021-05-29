@@ -1,0 +1,21 @@
+---
+---
+
+
+{% assign recipe_categories = site.collections | where: "collection_type", "recipe-category" %}
+
+
+[
+    {% for category in recipe_categories %}
+        {% for recipe in site[category.label] %}
+            {
+                "title":    "{{ recipe.title }}",
+                "url":  "{{ recipe.url }}",
+                "category" : "{{recipe.categories | join: ', '}}",
+                "tags"     : "{{ recipe.tags | join: ', ' }}"
+            }{% unless forloop.last %},{% endunless %}
+        {% endfor %}{% unless forloop.last %},{% endunless %}
+    {% endfor %}
+
+]
+
